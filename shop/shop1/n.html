@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="n.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1></h1>
+        </div>
+        <div class="row">
+            <h3>Add new product</h3>
+            <div class="add-product">
+                <div>
+                    <label>Product name</label>
+                    <input type="text" id="product-name">
+                </div>
+                <div>
+                    <a href="javascript:;" class="btn btn-success" onclick="AddProduct()">Add</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Display all products</h3>
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Product name</th>
+                            <th id="totalProduct"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbProduct">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="n.js"></script>
+</body>
+</html>

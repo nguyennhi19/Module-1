@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        let min = 1;
+        let max = 20;
+        let v = 5;
+        let result;
+        let flag = true;
+
+        for (let i = 0; i < 20; i++) {
+            arr[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        } 
+
+        document.write("array :"+arr +"<br>");
+
+        // duyệt mảng
+
+        for (let i = 0; i < 20; i++){
+            // tìm và xóa v
+            if (arr[i] == v) {
+                flag = false;
+                arr.splice(i, 1);
+                i--;
+            }
+        }
+        if(flag){
+            arr = v + " không có trong mảng ";
+        }
+        document.write(arr);
+
+    </script>
+</body>
+
+</html>

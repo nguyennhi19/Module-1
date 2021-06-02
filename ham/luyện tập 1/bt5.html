@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <h2>Tìm tên chòm sao </h2>
+        <tr>
+            <td>Nhập tên ngôi sao</td>
+            <td><input type="text" id="name" placeholder="tên ngôi sao"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" value="Tìm" onclick="findStar()"></td>
+            <td><span id="star"></span><br></td>
+        </tr>
+    </table>
+    <script>
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Sao chổi", "Sao băng", "Sao đêm", "Sao biển", "Sao sáng", "Sao lấp lánh","sao chi cũng đc"];
+
+    function findStar() {
+        let name = document.getElementById("name").value;
+        for (let i = 0; i < 7; i++) {
+            if (name == arr1[i]) {
+                console.log(arr2[i]);
+                document.getElementById("star").innerHTML = "chòm sao Star: " + arr2[i];
+                break;
+            } else {
+                document.getElementById("star").innerHTML = "chòm sao không có trong danh sách";
+            }
+        }
+    }
+ </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            
+            constructor(name, age, email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+                this.mathScore=0;
+                this.physicsScore=0;
+                this.chemistryScore=0;
+                this.averageScore=0;
+                this.rank="";
+
+
+            }
+            inputScores() {
+                this.mathScore = parseInt(prompt("Nhập điểm toán :"));
+                this.physicsScore = parseInt(prompt("Nhập điểm lý :"));
+                this.chemistryScore =parseInt( prompt("Nhập điểm hóa :"));
+            }
+            calAverageScores() {
+                this.averageScore = ((this.mathScore * 2 + this.physicScore + this.chemistryScore) / 4);
+                
+            }
+            rank() {
+                if (this.averageScore >= 9 && this.averageScore <= 10) {
+                    return "Xếp loại xuất sắc";
+                } else if (this.averageScore >= 8) {
+                    return "Xếp loại giỏi";
+                } else if (this.averageScore >= 7) {
+                    return "Xếp loại khá";
+                } else if (this.averageScore >= 5) {
+                    return "Xếp loại trung bình";
+                } else {
+                    return "Xếp loại yếu";
+                }
+            }
+            printInfo() {
+                this.calAverageScores();
+                this.rank();
+                document.write(`    <p>Name: ${this.name}</p>
+                        Age: ${this.age}<br>
+                        Email: ${this.email}<br>
+                        MathScore: ${this.mathScore}<br>
+                        PhysicsScore: ${this.physicsScore}<br>
+                        ChemistryScore: ${this.chemistryScore}<br>
+                        AverageScore: ${this.averageScore}<br>
+                        Rank: ${this.rank()}<br>`);
+            }
+        }
+        let Dat = new Student("Trương Đình Duy Đạt", "25 tuổi", "datluon@gmail.com");
+        let Binh = new Student("Cao Thanh Bình", "25 tuổi", "binhluon@gmail.com");
+        let Nhi = new Student("Nguyễn Nhi", "18 tuổi", "nhinguyen@gmail.com");
+
+
+        Dat.inputScores();
+        Dat.printInfo();
+        Binh.inputScores();
+        Binh.printInfo();
+        Nhi.inputScores();
+        Nhi.printInfo()
+
+    </script>
+</body>
+
+</html>

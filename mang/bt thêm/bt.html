@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          let N = [];
+        let max = 90;
+        let min = 10;
+        let n = parseInt(prompt("nhập độ dài"))
+        for(let i=0;i<n;i++){
+            N[i]=new Array
+            for (let j=0;j<n;j++) {
+                N[i][j]=Math.floor(Math.random()*(max-min+1)+min);
+                document.write(N[i][j]+"|")     
+            }document.write("<br>")
+        }document.write("<br>")
+        let sum=0
+        for(let i=0;i<n;i++){
+            for (let j=0;j<n;j++) {
+                if(j==0||j==n-1||i==0||i==n-1)
+                    sum+= N[i][j]
+            } 
+        }document.write(sum + "<br>");
+
+    </script>
+
+</body>
+</html>

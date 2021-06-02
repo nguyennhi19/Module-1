@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let max = 80;
+        let min = 10;
+        function generateMatrix() {
+            let arr = [];
+            for (let i = 0; i < 10; i++) {
+               
+                arr[i] = new Array
+                for (let j = 0; j < 15; j++) {
+                    arr[i][j] = Math.floor(Math.random() * (max - min + 1) + min);
+                    document.write(arr[i][j]+"|");
+                    // u+= ("<td>" + arr[i][j] + "</td>");
+                // } u += "</tr>"
+                }document.write("<br>");
+            } document.write("<br>");
+            // u += "</table>"
+
+        }
+        generateMatrix()
+    </script>
+</body>
+
+</html>

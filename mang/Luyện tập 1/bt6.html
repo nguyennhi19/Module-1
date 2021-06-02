@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        max = 6;
+        let min = -10;
+        let v = 5;
+        let check = false;
+        let nhi;
+
+        for (i = 0; i < 10; i++) {
+            arr[i] = Math.floor(Math.random() * (max - min + 1)+ min) ;
+        }
+        document.write(arr);
+        // for (let i = 0; i < 10; i++) {
+        //     if (v == arr[i]) {
+        //         check = true;
+        //     }
+        // }
+        // if (check) {
+        //     document.write(`<br>${v} thuoc`)
+        // } else document.write(`<br>${v} ko thuoc`)
+        
+        if(arr.indexOf(v)!=-1){
+            document.write("V is in the array")
+        }else document.write("V is not in the array")
+    </script>
+</body>
+
+</html>

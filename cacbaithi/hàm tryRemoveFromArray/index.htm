@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let index=parseInt(prompt("nhập ví trí bạn muốn xóa :"));
+        let arr = [12, 33, 13, 53, 86, 31, 21]
+        function tryRemoveFromArray(arr,index) {
+            for (let i = 0; i < arr.length; i++) {
+                if (i==index ) {
+                    arr.splice(i, 1);
+                }
+            }
+            return arr;
+        }
+        document.write(` mảng ban đầu là :${arr} <br>`);
+        let remove = tryRemoveFromArray(arr, index);
+        document.write(`mảng trả về : ${remove}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>row</td>
+            <td><input type="number" id="row"></td>
+        </tr>
+        <tr>
+            <td>col</td>
+            <td><input type="number" id="col"></td>
+        </tr>
+        <tr>
+            <td>min</td>
+            <td><input type="number" id="min"></td>
+        </tr>
+        <tr>
+            <td>max</td>
+            <td><input type="number" id="max"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="chan()" value="Tổng các số chẵn"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="ct()" value="Ma trận"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="cheochinh()" value="Tổng đường chéo chính"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="cheophu()" value="Tổng đường chéo phụ"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="bien()" value="Tổng đường biên"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="duoi()" value="Tam giác dưới"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="tren()" value="Tam giác trên"></td>
+        </tr>
+        <tr>
+
+            <td><input type="button" onclick="getMatrix()" value="Generate Matrix"></td>
+        </tr>
+
+    </table>
+    <div id="result"></div>
+    <div id="chan"></div>
+    <div id="cheochinh"></div>
+    <div id="cheophu"></div>
+    <div id="bien"></div>
+    <div id="duoi"></div>
+    <div id="tren"></div>
+  
+    <script>
+        let matrix;
+        function generateMatrix(row , col , min , max ) {
+            let matrix = [];
+            for (let i = 0; i < row; i++) {
+                let arr = [];
+                for (let j = 0; j < col; j++) {
+                    arr[j] = Math.floor(Math.random() * (max - min + 1) + min);
+                } matrix[i] = arr;
+            } return matrix;
+        }
+
+        function printMatrix(matrix) {
+            let result = '<table border="1">';
+            for (let i = 0; i < matrix.length; i++) {
+                result += `<tr>`;
+                for (let j = 0; j < matrix[i].length; j++) {
+                    result += `<td>${matrix[i][j]}</td>`
+                }
+                result += `</tr>`;
+            }result+=`</table>`
+            return result;
+        }
+
+       
+        function tinhtong(matrix) {
+            let sum = 0;
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (matrix[i][j] % 2 == 0) {
+                        sum += matrix[i][j];
+                    }
+                }
+            }
+            return sum;
+        }
+
+        function tinhtongcheochinh(matrix) {
+            let sum1 = 0;
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (i == j) {
+                        sum1 += matrix[i][j];
+                    }
+                }
+            } return sum1;
+        }
+
+
+        function tinhtongcheophu(matrix) {
+            let sum2 = 0;
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (i + j + 1 == matrix[i].length) {
+                        sum2 += matrix[i][j];
+                    }
+                }
+            } return sum2;
+        }
+
+        function tinhtongbien(matrix) {
+            let sum3 = 0;
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (j == 0 || j == matrix[i].length - 1 || i == 0 || i == matrix[i].length - 1) {
+                        sum3 += matrix[i][j];
+                    }
+                }
+            } return sum3;
+        }
+
+        
+        function tamgiacduoi(matrix) {
+            let tab= `<table border = 1>`;
+            for (let i = 0; i < matrix.length; i++) {
+                tab+=`<tr>`
+                for (let j = 0; j < i; j++) {
+                    tab+=  `<td > ${matrix[i][j]} </td>`;
+                } tab += `</tr>`;
+                
+            } tab += `</table>`;
+            return tab;
+        }
+
+        function tamgiactren(matrix) {
+            let ta= `<table border = 1>`;
+            for (let i = 0; i < matrix.length; i++) {
+                ta+=`<tr>`
+                for (let j = 0; j < i; j++) {
+                    ta+=  `<td ></td>`; 
+                }
+                for (j = i; j < matrix[i].length; j++) {
+                    ta+=  `<td > ${matrix[i][j]} </td>`;
+                }ta += `</tr>`;
+            }ta += `</table>`;
+            return ta;
+        }
+        function duoi() {
+                document.getElementById('duoi').innerHTML =
+                    tamgiacduoi(matrix);
+            }
+        function tren() {
+                document.getElementById('tren').innerHTML =
+                    tamgiactren(matrix);
+            }
+        function bien() {
+                document.getElementById('bien').innerHTML =
+                    tinhtongbien(matrix);
+            }
+        function cheophu() {
+                document.getElementById('cheophu').innerHTML =
+                    tinhtongcheophu(matrix);
+            }
+        function cheochinh() {
+                document.getElementById('cheochinh').innerHTML =
+                    tinhtongcheochinh(matrix);
+            }
+        function chan() {
+                document.getElementById('chan').innerHTML =tinhtong(matrix);
+            }
+        function ct() {
+                document.getElementById('result').innerHTML =printMatrix(matrix);
+            }
+        function getMatrix() {
+            let row = parseInt(document.getElementById('row').value);
+            let col = parseInt(document.getElementById('col').value);
+            let min = parseInt(document.getElementById('min').value);
+            let max = parseInt(document.getElementById('max').value);
+            matrix = generateMatrix(row,col, min, max);
+            document.getElementById('result').innerHTML = printMatrix(matrix);
+        }
+
+
+        
+
+
+    </script>
+</body>
+
+</html>

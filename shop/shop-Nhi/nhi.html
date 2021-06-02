@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./shop-Nhi/css/nhi.css" />
+</head>
+
+<body id="tbProduct">
+    <div class="container">
+        <div class="row">
+            <h3>Add new product</h3>
+            <div class="add-product">
+                <div>
+                    <lable>Prpduct name</lable>
+                    <input type="text" id="product-name">
+                </div>
+                <div>
+                    <a href="javascript:;" class="btn btn-success" onclick="AddProduct">Add</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <h3>Display all product</h3>
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Product name</th>
+                            <th>10 product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>IP 6s</td>
+                            <td><a href="javascript:;" class="btn btn-warning">Edit</a>
+                                <a href="javascript:;" class="btn btn-danger">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>IP 7s</td>
+                            <td><a href="javascript:;" class="btn btn-warning">Edit</a>
+                                <a href="javascript:;" class="btn btn-danger">Remove</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>IP 8s</td>
+                            <td><a href="javascript:;" class="btn btn-warning">Edit</a>
+                                <a href="javascript:;" class="btn btn-danger">Remove</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script/nhi.js"></script>
+
+</body>
+
+</html>

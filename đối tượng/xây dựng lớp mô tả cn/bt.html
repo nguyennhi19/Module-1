@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Xây dựng ct vẽ Hình Chữ Nhật</legend>
+            Nhập chiều rộng: <input type="text" id="inputWidth"  placeholder="Nhập chiều rộng"> cm<br>
+            Nhập chiều dài: <input type="text" id="inputHeight" placeholder="Nhập chiều dài"> cm<br>
+            <input type="button" value="In hình" onclick="drawRec()">
+            <div id="result"></div> <br><br>
+            <canvas id="myCanvas" width="1000px" height="500px" style="border: 5px ;"></canvas>
+        </fieldset>
+    </form>
+    
+    </body>
+    <script>
+        let rectangle = function(widthRec,heightRec) {
+            this.widthRec = widthRec;
+            this.heightRec = heightRec;
+            this.getWidth = function () {
+                return widthRec
+            };
+            this.getHeight = function () {
+                return heightRec
+            };
+            this.getArea = function () {
+                return (widthRec*heightRec)
+            };
+            this.getPerimeter = function () {
+                return (widthRec*2 + heightRec*2)
+            };
+        };
+    
+        function drawRec() {
+            let context = document.getElementById("myCanvas").getContext("2d");
+            let width = document.getElementById("inputWidth").value;
+            let height = document.getElementById("inputHeight").value;
+            context.beginPath();
+            // context.moveTo(0,0);
+            // context.lineTo(0,height);
+            // context.lineTo(width,height);
+            // context.lineTo(width,0);
+            // context.lineTo(0,0);
+            context.fillStyle = "red";
+            context.fillRect (0,0, width, height)
+            context.stroke();
+            let Rectangle = new rectangle(width,height);
+            let areaRec = Rectangle.getArea();
+            let periRec = Rectangle.getPerimeter();
+            document.getElementById("result").innerHTML = "Hình chữ nhật:" + "<br>" +
+                "Có chiều rộng = " + width + " cm<br>" +
+                "Chiều dài = " + height +" cm<br>" +
+                "Diện tích = " + areaRec + "cm<sup>2</sup> <br>" +
+                "Chu vi = " + periRec +" cm";
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let result;
+        let str="    NgUYỄn      LưONG       ThỊ     HoÀI      nHi     ";
+        function string(str){
+            str=str.trim().replace(/  +/g, " ");
+            str = str.toLowerCase();
+            let i = str.indexOf(" ");
+            while (i < str.length) {
+              if (str[i] == " ") {
+                str =
+                  str.substring(0, i + 1) +
+                  str[i + 1].toUpperCase() +
+                  str.substring(i + 2, str.length);
+              }
+              i++;
+            }
+            str = str[0].toUpperCase() + str.substring(1, str.length);
+            return str;
+
+        } 
+        result=  string(str);
+        document.write(result)
+
+
+        // let text = prompt("nhập kí tự vào ");
+        // function capitalize(str) {
+        //     let splitStr = str.toLowerCase().split(' ');
+        //     for (let i = 0; i < splitStr.length; i++) {
+        //         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        //     }
+        //     return splitStr.join(' ');
+        // }
+        // document.write(capitalize(text));
+        
+
+
+
+
+        // function capitalize(){
+        //     let arr=["nhi    NGUYEN",78];
+        //      str=arr.toString()
+        // } 
+        // document.write(str)
+        
+
+
+
+        // function clearUnnecessaryWhiteSpace(str) {
+        //     return str.trim().replace(/  +/g, " ");
+        //   }
+        //   function capitalize(str) {
+        //     str = clearUnnecessaryWhiteSpace(str);
+        //     str = str.toLowerCase();
+        //     let i = str.indexOf(" ");
+        //     while (i < str.length) {
+        //       if (str[i] == " ") {
+        //         str =
+        //           str.substring(0, i + 1) +
+        //           str[i + 1].toUpperCase() +
+        //           str.substring(i + 2, str.length);
+        //       }
+        //       i++;
+        //     }
+        //     str = str[0].toUpperCase() + str.substring(1, str.length);
+        //     return str;
+        //   }
+        //   let b= capitalize(str)
+        //   document.write(b)
+          
+    </script>
+</body>
+</html>

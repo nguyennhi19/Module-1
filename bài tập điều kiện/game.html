@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game ghép ảnh</title>
+</head>
+<body style="text-align: center">
+<div>
+<img src="img/gau1.jpg" alt="img/gau1.jpg" id="img1" onclick="change1()" width="300" height="100"/><br>
+<img src="img/gau2.jpg" alt="img/gau2.jpg" id="img2" onclick="change2()" width="300" height="100"/><br>
+<img src="img/gau3.jpg" alt="img/gau3.jpg" id="img3" onclick="change3()" width="300" height="100"/><br>
+<img src="img/gau4.jpg" alt="img/gau4.jpg" id="img4" onclick="change4()" width="300" height="100"/><br>
+</div>
+</body>
+<script>
+    const gau1 = 'https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/183467640_1591149661092689_8245785618475626204_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=2Px_X4s4g0IAX8Z97Yo&_nc_ht=scontent.fpnh22-1.fna&oh=8358e63d4da1d603b127668deb7e1a41&oe=60BECA84';
+    const gau2 = 'https://scontent.fpnh22-2.fna.fbcdn.net/v/t1.6435-9/185109577_1591149747759347_2561499392081271161_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=730e14&_nc_ohc=5tk3si5gMGcAX_hjvek&_nc_ht=scontent.fpnh22-2.fna&oh=3cd54ebc2d682773f9bce98401e4ae61&oe=60C07264 ';
+    const gau3 = 'https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/183944908_1591149814426007_2526692935665487806_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=NRN7N7WWcZQAX93UUO6&_nc_ht=scontent.fpnh22-3.fna&oh=45ca3eab63f16c912c2c8368a749730b&oe=60C06928';
+    const gau4 = 'https://scontent.fpnh22-2.fna.fbcdn.net/v/t1.6435-9/183955162_1591149907759331_6451125778344870519_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=730e14&_nc_ohc=TKSOLTWwZUUAX-mnZn1&_nc_ht=scontent.fpnh22-2.fna&oh=5bcfa8928ecc9e7e47b32c8e1ba83c1f&oe=60C02997';
+    const cat1 = 'https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/183494776_1591160727758249_5242702412658113749_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=730e14&_nc_ohc=UkyXmDHIxqsAX9NJ0o4&_nc_ht=scontent.fpnh22-1.fna&oh=f330a5b1bba06a1b22d4fa6c7b62e753&oe=60BE3B82';
+    const cat2 = 'https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/184842250_1591160767758245_6763699760894729344_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=730e14&_nc_ohc=9zDZJXNvbgcAX8lNYM9&_nc_ht=scontent.fpnh22-3.fna&oh=7304b489f738abc050b125a0cfd44397&oe=60BFB503';
+    const cat3 = 'https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/183417821_1591160797758242_1598352365769856001_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=cXSdTUiSGhYAX9E2WEd&_nc_ht=scontent.fpnh22-3.fna&oh=647983e9514f07ddb37b588bd2a388f8&oe=60BD2479';
+    const cat4 = 'https://scontent.fpnh22-2.fna.fbcdn.net/v/t1.6435-9/183859015_1591160937758228_8788899776346907709_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=730e14&_nc_ohc=yKeeyKVlwKUAX_uPm6d&_nc_ht=scontent.fpnh22-2.fna&oh=babe43bbce7ae49d6e43adb9c6d8e3d1&oe=60BD71C8';
+    const dog1 = 'https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/183488165_1591170767757245_4179639430712426655_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=730e14&_nc_ohc=_UdHdSRTmqQAX8i8glg&_nc_ht=scontent.fpnh22-3.fna&oh=ef691727bdc8c7ea6d093edd058fe456&oe=60BFC17D';
+    const dog2 = 'https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/184338960_1591170824423906_3851894449078057117_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=730e14&_nc_ohc=sjoWtooiiqcAX_jkveQ&_nc_ht=scontent.fpnh22-1.fna&oh=891c5360e0700ff99d7ce4d94613f519&oe=60BFC86C';
+    const dog3 = 'https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/183500472_1591170867757235_4431634014300964139_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=730e14&_nc_ohc=dTGMRKb4SW0AX8G8-Tf&_nc_ht=scontent.fpnh22-1.fna&oh=69d342a75e4524b2fc438df5f08169f5&oe=60C026D3';
+    const dog4 = 'https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/184913456_1591170931090562_2200545276313661796_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=iUvXm4zZEZsAX_81OR0&_nc_ht=scontent.fpnh22-1.fna&oh=6fa865c02ff86138d9cbde5071edfd5c&oe=60BE22E7';
+    let IMG = [
+        [gau1,gau2,gau3,gau4],
+        [cat1,cat2,cat3,cat4],
+        [dog1,dog2,dog3,dog4]
+    ];
+    let i = 1;
+
+    function change1() {
+        let img1 = document.getElementById('img1');
+        let n = i%3;
+        img1.alt = IMG[n][0];
+        img1.src = IMG[n][0];
+        i=i+1;
+        if ((img1.alt ===cat1 && img2.alt===cat2 && img3.alt===cat3 && img4.alt===cat4 )
+            ||(img1.alt===gau1 && img2.alt===gau2 && img3.alt===gau3 && img4.alt===gau4 )
+            ||(img1.alt===dog1 && img2.alt===dog2 && img3.alt===dog3) && img4.alt===dog4){
+            alert("You win");
+        }
+    }
+
+    function change2() {
+        let img2 = document.getElementById("img2");
+        let n = i%3;
+        img2.alt = IMG[n][1];
+        img2.src = IMG[n][1];
+        i=i+1;
+        if ((img1.alt ===cat1 && img2.alt===cat2 && img3.alt===cat3 && img4.alt===cat4 )
+            ||(img1.alt===gau1 && img2.alt===gau2 && img3.alt===gau3 && img4.alt===gau4 )
+            ||(img1.alt===dog1 && img2.alt===dog2 && img3.alt===dog3) && img4.alt===dog4){
+            alert("You win");
+        }
+    }
+    function change3() {
+        let img3 = document.getElementById("img3");
+        let n = i%3;
+        img3.alt = IMG[n][2];
+        img3.src = IMG[n][2];
+        i=i+1;
+        if ((img1.alt ===cat1 && img2.alt===cat2 && img3.alt===cat3 && img4.alt===cat4 )
+            ||(img1.alt===gau1 && img2.alt===gau2 && img3.alt===gau3 && img4.alt===gau4 )
+            ||(img1.alt===dog1 && img2.alt===dog2 && img3.alt===dog3) && img4.alt===dog4){
+            alert("You win");
+        }
+    }
+    function change4() {
+        let img4 = document.getElementById("img4");
+        let n = i%3;
+        img4.alt = IMG[n][3];
+        img4.src = IMG[n][3];
+        i=i+1;
+        if ((img1.alt ===cat1 && img2.alt===cat2 && img3.alt===cat3 && img4.alt===cat4 )
+            ||(img1.alt===gau1 && img2.alt===gau2 && img3.alt===gau3 && img4.alt===gau4 )
+            ||(img1.alt===dog1 && img2.alt===dog2 && img3.alt===dog3) && img4.alt===dog4){
+            alert("You win");
+        }    
+    }
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function isSymmetricalNumber(number) {
+            if (isNaN(number) || (number <= 0)) {
+                alert('nhập lại')
+            }
+            else {
+                let num = number; 
+                let test = 0;
+                let n;
+                while (num != 0) {
+                    n = num % 10;
+                    test = test * 10 + n;
+                    num = (num - n) / 10;
+                }
+                if (test == number) { return true; }
+                else { return false; }
+            }
+        }
+        test = true;
+        for (let i = 100; i <= 20000; i++) {
+            if (isSymmetricalNumber(i)) {
+                if (test == true) {
+                    document.write(i)
+                    test = false;
+                }
+                else {
+                    document.write(`, ${i}`)
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

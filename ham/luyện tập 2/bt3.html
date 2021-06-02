@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function giaithua() {
+            let number=parseInt(prompt("nhập số"))
+            if (isNaN(number)) return false;
+            let factorial = number;
+            for (let i = 1; i < number; i++) {
+                factorial = factorial * i;
+            }
+            return ("Giai thừa của " + number + " = " + factorial);
+        }
+        let num = giaithua();
+        document.write(num);
+
+        // function giaithua(n) {
+        //     if (n == 1) return 1;
+        //     return n * giaithua(n - 1);
+        // }
+        // let result = giaithua(5);
+        // console.log(result);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function changeAB(numA, numB) {
+            if (isNaN(numA)) return "Nhập sai";
+            if (isNaN(numB)) return "Nhập sai";
+            let numC = numA;
+            numA = numB;
+            numB = numC;
+            return ("số thứ nhất : " + numA + " số thứ hai : " + numB)
+        }
+        let num1=parseInt(prompt("Nhập số :"));
+        let num2=parseInt(prompt("Nhập số :"));
+        change=changeAB(num1,num2)
+        document.write(change)
+    </script>
+</body>
+
+</html>

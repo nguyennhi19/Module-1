@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let value = prompt("nhập số nguyên cần xóa");
+        let arr = [12, 33, 13, 53, 86, 31, 21]
+        function tryRemoveFromArray(arr, x) {
+            for (let i = 0; i < arr.length; i++) {
+                let index = arr.indexOf(value);
+                if (index >= 0) {
+                    arr.splice(index, 1);
+                }
+            }
+            return arr;
+        }
+        document.write(` mảng các số nguyên là :${arr} <br>`);
+        let remove = tryRemoveFromArray(arr, value);
+        document.write(`mảng trả về : ${remove}`);
+    </script>
+</body>
+
+</html>

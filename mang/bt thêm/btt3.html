@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[];
+        let arr1=[];
+        let n=prompt('nhập n');
+        let min=10;
+        let max=40;
+        for(let i=0;i<n;i++){
+            arr[i]= new Array
+            for(let j=0;j<n;j++){
+                arr[i][j]=Math.floor(Math.random()*(max-min+1)+min)
+                document.write(arr[i][j]+"|");
+            }document.write("<br>");
+        }document.write("<br>"+"<br>");
+
+        for(let i=0;i<n;i++){
+            arr1[i]= new Array
+            for(let j=0;j<n;j++){
+                arr1[i][j]=Math.floor(Math.random()*(max-min+1)+min)
+                document.write(arr1[i][j]+"|");
+            }document.write("<br>");
+        }document.write("<br"+"<br>"+"<br>");
+
+        let s=0;
+        let s1=0;
+        for(let i=0;i<n;i++){
+            for(let j=0;j<n;j++){
+                s+=arr[i][j];    
+                s1+=arr1[i][j];
+            }
+        } document.write(s+"<br>"+"<br>"); 
+        document.write(s1+"<br>"+"<br>");   
+    
+        let v=1;
+        let v1=1;
+        for(let i=0;i<n;i++){
+            for(let j=0;j<n;j++){
+                v=v*arr[i][j];    
+                v1=v1*arr1[i][j];
+            }
+        } document.write(v+"<br>"+"<br>"); 
+        document.write(v1+"<br>"+"<br>"); 
+    </script>
+</body>
+</html>

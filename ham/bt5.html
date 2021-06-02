@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <h3>Chuyển đổi giữa mét và feet</h3>
+        <tr>
+            <td>Nhập số mét</td>
+            <td><input type="number" placeholder="nhập số mét" oninput="changeFeet(this.value)" onchange="changeFeet(this.value)" id="met"
+                 >&emsp;Mét sang feet : <span id="resultFeet"></span></td>
+        </tr><tr>
+            <td>Nhập số feet</td>
+            <td><input type="number" placeholder="nhập số feet" oninput="changeMet(this.value)" onchange="changeMet(this.value)" id="feet"
+                 >&emsp;Feet sang mét : <span id="resultMet"></span></td>
+        </tr>
+    </table>
+    </body>
+    <script>
+        function changeFeet(numMet) {
+            document.getElementById("resultFeet").innerHTML = numMet + " mét = " +(3.27869*numMet).toFixed(3) + " feet";
+        }
+        function changeMet(numFeet) {
+            document.getElementById("resultMet").innerHTML = numFeet + " feet = " +0.305*numFeet + " mét";
+        }
+    </script>
+</body>
+</html>

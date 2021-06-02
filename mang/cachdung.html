@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [];
+        const size = 20;
+        const min = 1;
+        const max = 100;
+
+
+        for (let i = 0; i < size; i++) {
+            array[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let result = "";
+        for (let i = 0; i < size; i++) {
+            result += `${array[i]}${i + 1 == size ? '' : '; '}`;
+        }
+
+        document.write(result);
+
+        // let x = 17;
+        // let index = -1;
+        // for (let i = 0; i < size; i++) {
+        //     if (array[i] == x) {
+        //         index = i;
+        //         break;
+        //     }
+        // }
+
+        // document.write(`<br>position of ${x} is ${index} in array`);
+
+        // let total = 0;
+        // for (let i = 0; i < size; i++) {
+        //     total += array[i];
+        // }
+        // document.write(`<br>total values of array is: ${total}`);
+
+        // let v = 101;
+        // for (let i = size; i > 0; i--) {
+        //     array[i] = array[i - 1];
+        // }
+        // array[0] = v;
+
+
+        // let position = 19;
+        // for (let i = position; i < size - 1; i++) {
+        //     array[i] = array[i + 1];
+        // }
+        // array.length -= 1;
+
+        // let map = [];
+        // for (let i = 0; i < size; i++) {
+        //     map[i] = array[i] * 2;
+        // }
+         // const num = prompt();
+        // const str = num.toString();
+        // const result = [str[0]];
+
+        // for (let x = 1; x < str.length; x++) {
+        //     if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+        //         result.push('-', str[x]);
+        //     }
+        //     else {
+        //         result.push(str[x]);
+        //     }
+        // }
+        // document.write(result.join(''));
+        let num= prompt();
+        let str= num.toString();
+        let result=[str[0]];
+        for(let i=1;i<str.length;i++){
+            if((str)){}
+        }
+    </script>
+</body>
+
+</html>

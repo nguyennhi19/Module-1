@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Kiểm tra số nguyên tố</h2>
+    <table border="1">
+        <tr>
+            <td>number </td>
+            <td><input type="number" placeholder="nhập số bất kì" oninput="kiemtra(this.value)"
+                    onchange="kiemtra(this.value)"><br></td>
+        </tr>
+        <tr>
+            <td>Kết quả:</td>
+            <td>Số <span id="result"></span></td>
+        </tr>
+    </table>
+    <script>
+        function isPrime(number) {
+            let count = 0;
+            for (let i = 0; i < number; i++) {
+                if (number % i == 0) {
+                    count++
+                }
+            }
+            if (count > 1) {
+                return number + " is not prime"
+            } else return number + " is prime"
+        }
+        function kiemtra(numPrime) {
+            let check = isPrime(numPrime);
+            document.getElementById("result").innerHTML = check;
+        }
+
+    </script>
+</body>
+</html>

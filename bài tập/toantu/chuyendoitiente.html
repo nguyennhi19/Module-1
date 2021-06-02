@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Currency conversion</h1>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="n1">&nbsp;</td>
+            <td><select type="text" id="n2">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select></td>
+            <td><select type="text" id="n3">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select></td>
+            <td><input type="button" value="currency" onclick="ct()"></td>
+        </tr>
+    </table>
+    <div id="conver"></div>
+    <script>
+        function ct(){
+            let a = document.getElementById("n1").value;
+            let b = document.getElementById("n2").value;
+            let c = document.getElementById("n3").value;
+            if (b=="VND"){
+                if(c=="VND"){
+                    document.getElementById("conver").innerHTML=a;
+                }else document.getElementById("conver").innerHTML=a/23000;
+            }else {
+                if(c=="VND"){
+                    document.getElementById("conver").innerHTML=a*23000
+                }else document.getElementById("conver").innerHTML=a;
+            }
+        }
+    </script>
+</body>
+</html>

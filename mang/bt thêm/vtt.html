@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let grades=[78,33,67,82,38]
+        let kq = [];
+        let size = grades.length;
+        for (let i = 0; i < size; i++) {
+            if (grades[i] < 38 || grades[i] % 5 == 0) {
+                kq.push(grades[i]);
+            } else if (grades[i] % 5 != 0) {
+                let nhi = (parseInt(grades[i] / 5) + 1) * 5 - grades[i];
+             if (nhi < 3) {
+                kq.push((parseInt(grades[i] / 5) + 1) * 5)
+            } else {
+                kq.push(grades[i])
+            }
+          }
+        } console.log( kq);
+
+        
+    </script>
+</body>
+
+</html>

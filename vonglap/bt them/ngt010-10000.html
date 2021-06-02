@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+         
+         let j=1;
+        while(j<1000){
+            let total=0;
+            let i=0;
+          while(i<=j){
+             if(j%i==0){
+                 total+=i;
+             }
+             i++;
+         }
+         
+         if(j==(total/2)){
+             document.write(j + "<br>");
+             
+         }
+         j++;
+        }
+
+    </script>      -->
+    <script>
+
+        for (num = 10; num < 10000; ) {
+            let s = 0
+            for (let i = 0; i <= num / 2; ) {
+                if (num % i == 0) { 
+                    s += i
+                }
+                i++;
+            }
+            if (num == (s )) {
+                document.write(num + "<br>");
+            }
+            num++;
+            }
+
+
+    </script>
+</body>
+
+</html>

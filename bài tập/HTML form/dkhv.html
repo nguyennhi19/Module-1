@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .grid-item {
+            padding: 1px;
+            color: blue;
+        }
+        body{
+            background-color: palegoldenrod;
+        }
+    </style>
+</head>
+<body >
+<h1 style=" background-color: aquamarine; color: blue">ĐĂNG KÝ HỌC VIÊN </h1>
+<form action="" method="GET">
+  <p style="color: blue">
+    Họ và tên
+    <input type="text" name="name"><br><br>
+    Ngày sinh
+    <input type="text" name="day"><br><br>
+    giới tinh &nbsp;
+    <a  style="color: black">
+        <input type="radio" name="gender">Nam
+        <input type="radio" name="gender">Nữ
+    </a>
+    <br>
+    </p>
+        <div class="grid-container" >
+            <div class="grid-item">Địa chi</div>
+            <div class="grid-item" style="margin-left: -630px"><textarea name="address" cols="20" rows="3" ></textarea>
+            </div>
+        </div>
+     <br>
+    <p style="color: blue">
+     Lớp &emsp;&emsp;&nbsp;
+      <select>
+       <option value="">-Chọn lớp-</option>
+       <option value="B3">B3</option><option value="B4">B4</option>
+       <option value="B12">B12</option>
+       <option value="B6">B6</option>
+      </select>
+      <br><br>
+     Email &emsp;&ensp;
+      <input type="text" name="email"><br><br>
+     Điện thoại
+      <input type="text" name="phone"><br><br>
+      <p style="margin-left: 70px;" >
+        <input class="-margin" type="submit" name="Sumit Form" value="Gửi thông tin"/>
+        <input class="-margin" type="reset" name="Reset Form" value="Nhập lại"/>
+
+      </p>
+  </p>
+
+</form>
+</body>
+</html>
